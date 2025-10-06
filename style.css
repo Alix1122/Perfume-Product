@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --cream-color: hsl(30, 38%, 92%);
+    --white-color: hsl(0, 0%, 100%);
+    --grey-color: hsl(228, 12%, 48%);
+    --black-color: hsl(212, 21%, 14%);
+    --green-500-color: hsl(158, 36%, 37%);
+    --green-700-color: hsl(158, 42%, 18%);
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font-family: "Montserrat", sans-serif;
+font-family: "Fraunces", serif; */
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--cream-color);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 1rem;
+}
+
+img, 
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+#container img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#container .content {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#container .content .perfume {
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: var(--grey-color);
+}
+
+#container .content h1 {
+    font-family: "Fraunces", serif;
+    font-size: 32px;
+    margin: 20px 0;
+    line-height: 1;
+    color: var(--black-color);
+}
+
+#container .content p {
+    font-size: 14px;
+    color: var(--grey-color);
+    line-height: 1.6;
+}
+
+#container .content .price {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* display: flex; */
+    align-items: center;
+    margin: 20px 0;
+}
+
+#container .content .price .discount-price {
+    font-size: 32px;
+    color: var(--green-500-color);
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+#container .content .cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    background-color: var(--green-500-color);
+    color: var(--white-color);
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#container .content .cart::before {
+    content: "";
+    background: url("./images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+#container .content .cart:hover {
+    font-size: 14px;
+}
+
+    .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+
+@media (max-width: 700px) {
+    #container {
+        grid-template-columns: 1fr;
+    }
+
+    #container img {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    #container .content {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
